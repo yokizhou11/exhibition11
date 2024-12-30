@@ -5,9 +5,7 @@ import { initAvatarSwitcher } from './control.js';
 import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
 gsap.registerPlugin();  // 确保插件正确加载
 
-const APPID = "15c6afd2";
-const API_SECRET = "MWUyNzgyMDNiOTM3ZjE3MjUzMGE1ZWE2";
-const API_KEY = "2dafffff3af9efb452239c47f22ac48e";
+
 
 // 添加 getWebSocketUrl 函数
 function getWebSocketUrl(apiKey, apiSecret) {
