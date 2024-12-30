@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/",
+          "gsap": "/node_modules/gsap/gsap-core.js"
+      }
+      }
+    </script>
+    <script src="crypto-js.js"></script>
+    <script src="base64.js"></script>
+    <script src="./processor.worker.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/loaders/FBXLoader.js"></script>
+    <script src="./index.umd.js"></script>
+    <script type="module" src="digital.js"></script>    
+    <script type="module" src="three.js"></script>
+    <script type="module" src="control.js"></script>
+  </head>
+
+  <body>
+    <div id="hall_container">
+    </div>
+    <div id="model-container">
+    <div id="Model_startBtnWrap">
+        <button id="Model_newBtn">开始对话</button>
+        </div>
+        <!-- 点击开始对话后出现，初始隐藏 -->
+        <div id="Model_closeBtnWrap" style="display: none;">
+        <div id="Model_wrapDiv"></div>
+        <div id="Model_actionRow">
+          <input id="Model_taskInput" type="text" autocomplete="off" placeholder="快来问我问题吧" />
+          <button id="Model_talkBtn">
+            <img src="asset/icon/General/send.png" width="20px" height="20px">
+          </button>
+          <img id="Model_closeBtn" src="asset/icon/General/close.png" style="display: block;">
+        </div>
+        </div>
+    </div>
+
+    </div>
+    <div id="digital_container">
+        <div id="startBtnWrap">
+        <button id="newBtn">开始对话</button>
+        </div>
+        <!-- 点击开始对话后出现，初始隐藏 -->
+        <div id="closeBtnWrap" class="digital_expand" style="display: none;">
+        <div class="videoWrap">
+          <video id="mediaElement" class="videoEle show" autoplay></video>
+          <canvas id="canvasElement" class="videoEle hide"></canvas>
+        </div>
+        <div id="wrapDiv">
+        <div class="actionRow" >
+          <input id="taskInput" type="text" autocomplete="off" placeholder="快来问我问题吧" />
+          <button id="talkBtn"><img src="asset/icon/General/send.png" width="20px" height="20px"></button>
+          <img id="closeBtn" src="asset/icon/General/close.png" display="block" ></button>
+        </div>
+        </div>
+        <div id="loadingAnimation" class="hide" ></div>
+        </div>
+    </div>
+
+    <div class="controls">
+      <div id="music-toggle" title="音乐开关">
+        <audio  id="background-music" loop>
+            <source src="asset/music/bgm.mp3" type="audio/mp3">
+        </audio>
+      </div>
+      <div id="scene-selected">
+        <!-- 场景选择弹窗 -->
+         <div id="scene-popup" style="display: none;">
+           <div class="popup-content">
+              <ul id="scene-list"></ul>
+           </div>
+         </div>
+      </div> 
+      <div id="avatarToggle">
+        <div id="avatar-popup" style="display: none;">
+            <div class="popup-content">
+                <ul id="avatar-list"></ul>
+            </div>
+        </div>
+    </div>
+      <div id="item-view" title="展品查看"></div>
+    <div class="toast" id="toast">Message</div>
+    <!-- 在 scene-popup 后添加 -->
+    <audio id="audio-output" style="display: none;"></audio>
+  </body>
+</html>

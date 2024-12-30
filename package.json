@@ -1,0 +1,21 @@
+{
+  "name": "streamingavatar",
+  "version": "1.0.0",
+  "description": "## Pre-Requisites",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^4.2.0",
+    "express": "^4.21.1",
+    "gsap": "^3.12.5",
+    "openai": "^4.28.0",
+    "three": "^0.169.0",
+    "three-gif-texture": "^1.0.15",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.4"
+  }
+}
